@@ -61,8 +61,9 @@ Attends ses réponses. Une fois qu'il a répondu, dis-lui :
 > 4. Tester **les 4 modes** de Claude Code
 > 5. Apprendre à **écrire une bonne instruction**
 > 6. Lancer **un vrai skill** qui génère un rapport financier en PDF
+> 7. Découvrir **les sub-agents** pour déléguer
 >
-> Le tout va te prendre entre 15 et 20 minutes. Tu apprends en faisant, pas en lisant.
+> Le tout va te prendre entre 20 et 25 minutes. Tu apprends en faisant, pas en lisant.
 >
 > **On y va ?**
 
@@ -222,7 +223,7 @@ Puis : "Prêt pour la dernière partie, la plus excitante ?"
 
 > Maintenant, le moment le plus impressionnant. Je vais te montrer un vrai skill en action.
 >
-> Un **skill**, c'est une compétence que tu fabriques toi-même et que tu peux relancer à volonté. Dans ce starter kit, j'en ai un qui s'appelle `generate-finance-report`. Il fait quelque chose d'utile pour de vrai : il prend le ticker d'une compagnie cotée en bourse, va chercher ses dernières news, fait une analyse, et génère un rapport PDF professionnel.
+> Un **skill**, c'est une compétence que tu fabriques toi-même et que tu peux relancer à volonté. Dans ce starter kit, j'en ai un qui s'appelle `generate-finance-report`. Il fait quelque chose d'utile pour de vrai : il prend le ticker d'une compagnie cotée en bourse, va chercher ses dernières news, fait une analyse complète (sentiment, technique, fondamentale) et génère un rapport PDF professionnel de 5 pages.
 
 Demande à l'utilisateur :
 
@@ -252,11 +253,35 @@ open .tmp/finance_report_[TICKER].pdf
 
 Puis :
 
-> Voilà ! Tu viens de lancer ton premier skill. Le PDF que tu vois est généré 100% par le code, en une commande. Ce skill, tu peux le relancer sur n'importe quelle compagnie. Tu peux aussi l'adapter, le modifier, ou en créer d'autres pour tes propres besoins.
+> Voilà ! Tu viens de lancer ton premier skill. Le PDF que tu vois contient 5 pages : la cover avec les chiffres clés, les news récentes avec analyse de sentiment, l'analyse globale, l'analyse technique avec graphique (moyennes mobiles 50 et 200, supports, résistances), et l'analyse fondamentale (PER, marges, consensus analystes).
+>
+> Ce skill, tu peux le relancer sur n'importe quelle compagnie. Tu peux aussi l'adapter, le modifier, ou en créer d'autres pour tes propres besoins.
 
 ---
 
-## PHASE 7 — Récap final
+## PHASE 7 — Les sub-agents (déléguer pour aller plus loin)
+
+> Maintenant qu'on a vu les skills, parlons d'un autre concept puissant : les **sub-agents**.
+>
+> Un sub-agent, c'est un agent spécialisé que tu crées pour une tâche précise. Imagine que tu sois le chef d'orchestre, et que tu aies plusieurs musiciens. Chaque musicien (sub-agent) a son propre rôle, ses propres outils, et ses propres règles. Tu peux leur déléguer des tâches.
+
+Montre-lui le sub-agent inclus dans ce starter kit :
+
+```bash
+cat .claude/agents/code-explainer.md
+```
+
+Puis explique :
+
+> Ce sub-agent s'appelle `code-explainer`. Son rôle : prendre n'importe quel fichier de code et l'expliquer en français simple, comme si tu étais débutant. C'est utile quand tu tombes sur du code que tu ne comprends pas.
+>
+> Tu veux le tester ? Demande-moi par exemple : "Utilise le code-explainer pour m'expliquer @scripts/generate_report.py"
+
+Si l'utilisateur veut essayer, lance le sub-agent. Sinon, passe à la phase finale.
+
+---
+
+## PHASE 8 — Récap final
 
 > Bravo [prénom], tu as fini le tour ! Voici ce que tu as appris en pratique :
 >
@@ -266,6 +291,7 @@ Puis :
 > 4. **Les 4 modes** — comment contrôler mon niveau d'autonomie
 > 5. **Bonne instruction** — la compétence n°1 pour bien utiliser Claude Code
 > 6. **Les skills** — comment lancer une compétence réutilisable
+> 7. **Les sub-agents** — comment déléguer des tâches spécialisées
 >
 > **Tes prochaines étapes :**
 >
@@ -288,9 +314,9 @@ C'est OK. Demande-lui sur quelle phase il veut aller, et passe directement.
 Ne cherche pas à le faire avancer. Re-explique avec une autre analogie. Le tour ne réussit que si chaque phase est comprise.
 
 ### Le skill `generate-finance-report` plante
-Vérifier que `yfinance` et `reportlab` sont installés :
+Vérifier que `yfinance`, `reportlab` et `matplotlib` sont installés :
 ```bash
-pip3 install yfinance reportlab --break-system-packages
+pip3 install yfinance reportlab matplotlib --break-system-packages
 ```
 
 ### L'utilisateur pose des questions techniques avancées

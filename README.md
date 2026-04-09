@@ -1,6 +1,6 @@
 # Claude Code Starter Kit
 
-Un kit de démarrage pour découvrir **Claude Code** et **l'IA Agentique** en pratique. Tu télécharges le dossier, tu l'ouvres dans Claude Code, tu dis "Démarre le tour", et Claude Code te guide pendant 15-20 minutes à travers tous les concepts essentiels — sans jamais te perdre.
+Un kit de démarrage pour découvrir **Claude Code** et **l'IA Agentique** en pratique. Tu télécharges le dossier, tu l'ouvres dans Claude Code, tu dis "Démarre le tour", et Claude Code te guide pendant 20-25 minutes à travers tous les concepts essentiels — sans jamais te perdre.
 
 > **Important** : ce kit n'est pas un projet à installer au sens classique. C'est un environnement pédagogique conçu pour qu'un débutant puisse découvrir Claude Code en pratique, à son rythme.
 
@@ -14,13 +14,18 @@ En suivant le tour guidé, tu vas comprendre **en pratique** :
 - **Les 4 modes** — Default, Accept Edits, Plan, Auto-Accept
 - **Bonne instruction** — la compétence n°1 pour bien utiliser Claude Code
 - **Les skills** — compétences réutilisables que tu fabriques toi-même
+- **Les sub-agents** — comment déléguer des tâches spécialisées
 
-À la fin du tour, tu auras lancé un vrai skill qui va chercher les dernières news sur Nvidia (ou n'importe quelle action que tu choisis) et génère un rapport PDF professionnel.
+À la fin du tour, tu auras lancé un vrai skill qui va chercher les dernières news sur Nvidia (ou n'importe quelle action que tu choisis) et génère un rapport PDF professionnel de 5 pages incluant analyse technique avec graphique et analyse fondamentale.
 
 ## Ce qu'il te faut avant de commencer
 
 - **Claude Code installé** sur ton ordinateur → https://claude.com/claude-code
 - **Python 3.9+** (déjà présent sur Mac, à télécharger sur Windows : python.org)
+- **3 dépendances Python** (Claude Code va t'aider à les installer si nécessaire) :
+  - `yfinance` — pour récupérer les données boursières
+  - `reportlab` — pour générer le PDF
+  - `matplotlib` — pour le graphique technique
 
 C'est tout. Aucune clé API à créer, aucun compte externe à ouvrir.
 
@@ -59,7 +64,11 @@ Une fois que tu as fini le tour, tu peux t'amuser avec le skill `generate-financ
 /generate-finance-report MSFT
 ```
 
-Le PDF généré s'enregistre dans `.tmp/`.
+Le PDF généré (5 pages) s'enregistre dans `.tmp/`.
+
+Tu peux aussi tester le sub-agent `code-explainer` qui prend n'importe quel fichier de code et l'explique en français simple :
+
+> Utilise le code-explainer pour m'expliquer @scripts/generate_report.py
 
 ## Tu veux aller plus loin ?
 
