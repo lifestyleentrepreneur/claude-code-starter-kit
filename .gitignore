@@ -1,0 +1,34 @@
+# Secrets — NE JAMAIS COMMIT
+.env
+credentials.json
+token_*.json
+token.json
+
+# Logs
+*.log
+
+# Temporary workspace — content ignored, but folder is kept
+.tmp/*
+!.tmp/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+venv/
+.venv/
+env/
+
+# Generated config files
+com.honvoh.*.plist
+
+# Editors
+.vscode/
+.idea/
+*.swp
+.DS_Store

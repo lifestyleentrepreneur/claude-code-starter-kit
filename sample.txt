@@ -1,0 +1,21 @@
+L'IA Agentique : pourquoi 2026 change tout
+
+Pendant deux ans, les chatbots ont été des conversationalistes brillants mais profondément limités. Tu poses une question, ils répondent. Tu demandes un résumé, ils résument. Mais quand tu voulais qu'ils fassent quelque chose dans le monde réel — envoyer un email, modifier un fichier, naviguer sur un site web — il te fallait copier-coller le résultat à la main. Le pont entre la conversation et l'action restait à faire par toi.
+
+L'IA Agentique change ce paradigme. Au lieu d'être un conseiller passif, l'agent devient un exécutant. Il lit tes fichiers, écrit du code, lance des commandes, ouvre ton navigateur, remplit des formulaires. La frontière entre "demander" et "faire" s'efface.
+
+Trois éléments rendent cette transition possible aujourd'hui :
+
+1. La capacité de raisonnement long. Les modèles comme Claude Opus 4 peuvent maintenir un fil de pensée sur des tâches qui durent plusieurs minutes, voire plusieurs heures, sans perdre le fil.
+
+2. Les protocoles d'outil. MCP (Model Context Protocol) permet de brancher un agent à n'importe quel outil externe — un navigateur, une base de données, une API tierce — avec une seule norme universelle.
+
+3. L'environnement de développement intégré. Claude Code s'intègre directement dans VS Code et donne à l'agent un accès contrôlé à tes fichiers, ton terminal, et ton internet.
+
+Le résultat : des tâches qui prenaient des heures se font en minutes. Des automatisations qu'il fallait coder à la main pendant des jours se construisent en une après-midi de conversation. Un développeur seul peut maintenant produire ce qu'une équipe de cinq personnes faisait il y a deux ans.
+
+Mais l'IA Agentique n'est pas magique. Elle a ses limites, ses pièges, et surtout : elle exige une nouvelle compétence chez ses utilisateurs. Savoir donner une bonne instruction, comprendre quand l'agent va dériver, anticiper les risques. Les meilleurs utilisateurs d'IA Agentique ne sont pas les meilleurs codeurs — ce sont les meilleurs communicants.
+
+C'est pour ça que cette technologie est démocratisante. Elle ne récompense pas l'expertise technique brute, elle récompense la clarté de pensée et la précision du langage. Des compétences que tout le monde peut développer, peu importe son background.
+
+Si tu lis ce texte, tu fais probablement partie de ceux qui ont compris ça. Maintenant, à toi de jouer.
