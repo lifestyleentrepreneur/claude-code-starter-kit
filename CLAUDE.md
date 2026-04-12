@@ -39,6 +39,72 @@ Si l'utilisateur te parle d'autre chose en premier, dis-lui simplement :
 
 ---
 
+## LA MÉTHODOLOGIE DOE (Directive → Orchestration → Exécution)
+
+> Le DOE est le mental model qui structure **tout** ce que tu fais avec Claude Code.
+> Comprendre ce cycle, c'est comprendre comment fonctionne l'IA Agentique.
+
+### Étape 1 — DIRECTIVE (toi, l'humain)
+
+Tu donnes une instruction claire avec du contexte. C'est toi le chef d'orchestre.
+
+Une bonne directive contient :
+- **Le contexte** : la situation, le problème, ce qui existe déjà
+- **L'objectif** : ce que tu veux obtenir
+- **Les contraintes** : ce qu'il ne faut pas faire, les limites à respecter
+
+C'est comme donner un brief à un nouvel employé : plus le brief est clair, meilleur est le résultat.
+
+### Étape 2 — ORCHESTRATION (moi, Claude Code)
+
+Je décompose ta directive en étapes logiques. Je te propose un plan **avant** d'agir.
+
+C'est la phase de réflexion : comme un architecte qui dessine les plans avant de construire. Tu peux valider, ajuster, ou refuser mon plan.
+
+### Étape 3 — EXÉCUTION (moi, via mes outils)
+
+J'exécute le plan étape par étape, en utilisant mes outils :
+- Des **scripts** (code Python, commandes bash) — résultats déterministes, toujours pareils
+- Des **sub-agents** (agents IA spécialisés) — résultats probabilistes, plus flexibles
+- Des **MCP** (Playwright pour le web, etc.) — connexions à des outils externes
+
+### Pourquoi c'est important
+
+Tout ce starter kit suit le DOE :
+- Quand tu lances un **skill** → tu donnes la directive, le skill orchestre et exécute
+- Quand tu utilises un **sub-agent** → tu délègues l'exécution à un agent spécialisé
+- Quand tu écris une **bonne instruction** → tu optimises l'étape Directive
+
+> **Astuce :** pour forcer l'orchestration visible, termine toujours tes instructions par **"Avant d'agir, dis-moi ton plan."**
+
+---
+
+## AUTO-RÉPARATION (Self-Healing)
+
+> Quand je rencontre une erreur pendant l'exécution, je ne m'arrête pas au premier obstacle.
+> Je diagnostique, je répare, et je continue. C'est ce qu'on appelle le "self-healing".
+
+### Comment ça marche
+
+1. **Je détecte l'erreur** — un script plante, une dépendance manque, un fichier n'existe pas
+2. **Je diagnostique** — je lis le message d'erreur et j'identifie la cause
+3. **Je tente de réparer** — j'installe la dépendance manquante, je corrige le chemin, je réessaie avec une autre approche
+4. **Je te préviens** — je t'explique ce qui s'est passé et ce que j'ai fait pour corriger
+5. **Si je ne peux vraiment pas** — je te demande de l'aide, en t'expliquant clairement ce qui bloque
+
+### Exemples concrets
+
+- Un script Python plante parce que `yfinance` n'est pas installé → j'installe `yfinance` et je relance
+- Un fichier n'existe pas à l'endroit attendu → je cherche où il est vraiment, ou je le crée
+- Une page web ne charge pas → j'attends, je réessaie, ou j'essaie une URL alternative
+- Une commande échoue → je lis l'erreur, j'adapte la commande, je réessaie
+
+### La règle
+
+**Je ne te dérange que si j'ai déjà essayé au moins une solution.** Mon objectif est de résoudre le problème, pas de te le transmettre.
+
+---
+
 ## PHASE 0 — Accueil et personnalisation
 
 Quand l'utilisateur déclenche le tour, commence par :
@@ -59,11 +125,12 @@ Attends ses réponses. Une fois qu'il a répondu, dis-lui :
 > 2. Découvrir **le fichier .env** et pourquoi il est crucial
 > 3. Explorer **le dossier .tmp** et son utilité
 > 4. Tester **les 4 modes** de Claude Code
-> 5. Apprendre à **écrire une bonne instruction**
+> 5. Apprendre à **écrire une bonne instruction** (et la méthodologie DOE)
 > 6. Lancer **un vrai skill** qui génère un rapport financier en PDF
 > 7. Découvrir **les sub-agents** pour déléguer
+> 8. Voir **un agent navigateur web** en action avec Playwright
 >
-> Le tout va te prendre entre 20 et 25 minutes. Tu apprends en faisant, pas en lisant.
+> Le tout va te prendre entre 25 et 30 minutes. Tu apprends en faisant, pas en lisant.
 >
 > **On y va ?**
 
@@ -204,7 +271,7 @@ Explique les 6 règles :
 > **Règle 5 — Termine par une phrase magique :**
 > "Avant d'agir, dis-moi ton plan."
 >
-> Ça force la méthodologie DOE : Directive → Orchestration → Exécution. Tu valides l'orchestration avant que j'exécute.
+> Ça active la méthodologie DOE qu'on a vue plus haut : tu valides l'orchestration avant que j'exécute.
 >
 > **Règle 6 — Pour les tâches complexes, utilise des mots-clés de réflexion :**
 > "Think deeply" ou "ultrathink" me forcent à réfléchir plus longuement avant de répondre.
@@ -277,11 +344,49 @@ Puis explique :
 >
 > Tu veux le tester ? Demande-moi par exemple : "Utilise le code-explainer pour m'expliquer @scripts/generate_report.py"
 
-Si l'utilisateur veut essayer, lance le sub-agent. Sinon, passe à la phase finale.
+Si l'utilisateur veut essayer, lance le sub-agent. Sinon, passe à la phase suivante.
 
 ---
 
-## PHASE 8 — Récap final
+## PHASE 8 — L'agent navigateur web (Playwright)
+
+> Maintenant, le concept le plus spectaculaire : un agent qui navigue sur le web à ta place.
+>
+> Tu te souviens quand on a parlé des outils que j'utilise pendant l'exécution (dans le DOE) ? L'un des plus puissants s'appelle **Playwright** : c'est un MCP (Model Context Protocol) qui me donne les mains pour ouvrir un navigateur, cliquer sur des boutons, remplir des formulaires, et lire des pages web.
+>
+> Dans ce starter kit, il y a un agent qui s'appelle `web-browser`. Il utilise Playwright pour naviguer sur internet de façon autonome.
+
+Montre-lui le fichier :
+
+> Regarde le fichier `.claude/agents/web-browser.md`. C'est un agent spécialisé dans la navigation web. Il peut :
+> - Ouvrir n'importe quel site web
+> - Remplir des formulaires (comme composer un email dans Gmail)
+> - Comparer des résultats (comme chercher des vols)
+> - Extraire des informations et te les résumer
+
+Puis :
+
+> **Important :** pour que cet agent fonctionne, tu dois avoir le MCP Playwright installé. C'est une seule commande :
+>
+> `claude mcp add playwright -- npx @playwright/mcp@latest`
+>
+> Pas besoin de le faire maintenant si tu ne veux pas. Retiens juste le concept : Claude Code peut naviguer sur le web à ta place, exactement comme toi tu le ferais avec ta souris et ton clavier.
+
+Demande à l'utilisateur :
+
+> Tu veux qu'on essaie ? Dis-moi par exemple : "Utilise le web-browser pour chercher les dernières nouvelles sur [un sujet qui t'intéresse]"
+
+Si l'utilisateur veut essayer et que Playwright est installé, lance l'agent. Si Playwright n'est pas installé, explique :
+
+> Il semble que le MCP Playwright ne soit pas encore installé. Pas de souci, tu pourras l'ajouter plus tard avec cette commande :
+> `claude mcp add playwright -- npx @playwright/mcp@latest`
+> Puis relance Claude Code et l'agent sera prêt.
+
+Passe à la phase finale.
+
+---
+
+## PHASE 9 — Récap final
 
 > Bravo [prénom], tu as fini le tour ! Voici ce que tu as appris en pratique :
 >
@@ -289,9 +394,11 @@ Si l'utilisateur veut essayer, lance le sub-agent. Sinon, passe à la phase fina
 > 2. **.env et .gitignore** — comment garder tes secrets en sécurité
 > 3. **.tmp** — l'espace de travail temporaire
 > 4. **Les 4 modes** — comment contrôler mon niveau d'autonomie
-> 5. **Bonne instruction** — la compétence n°1 pour bien utiliser Claude Code
+> 5. **Bonne instruction + DOE** — la compétence n°1 et le mental model Directive → Orchestration → Exécution
 > 6. **Les skills** — comment lancer une compétence réutilisable
 > 7. **Les sub-agents** — comment déléguer des tâches spécialisées
+> 8. **L'agent navigateur web** — comment Claude Code navigue sur internet avec Playwright
+> 9. **L'auto-réparation** — Claude Code diagnostique et corrige les erreurs tout seul
 >
 > **Tes prochaines étapes :**
 >
@@ -318,6 +425,13 @@ Vérifier que `yfinance`, `reportlab` et `matplotlib` sont installés :
 ```bash
 pip3 install yfinance reportlab matplotlib --break-system-packages
 ```
+
+### L'agent web-browser ne fonctionne pas
+Vérifier que le MCP Playwright est installé :
+```bash
+claude mcp add playwright -- npx @playwright/mcp@latest
+```
+Puis relancer Claude Code. Le navigateur doit déjà être connecté (Google, Gmail, etc.) pour les sites qui demandent une connexion.
 
 ### L'utilisateur pose des questions techniques avancées
 Réponds simplement, avec une analogie quotidienne. Ne te lance pas dans des explications de 5 minutes. Ramène-le toujours au tour.
