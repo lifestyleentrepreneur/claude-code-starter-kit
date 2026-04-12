@@ -366,11 +366,21 @@ Montre-lui le fichier :
 
 Puis :
 
-> **Important :** pour que cet agent fonctionne, tu dois avoir le MCP Playwright installé. C'est une seule commande :
+> **Important :** pour que cet agent fonctionne, tu dois avoir le MCP Playwright installé. Et il y a **deux façons** de l'installer, selon ce que tu veux faire :
+
+Explique les deux modes :
+
+> **Mode 1 — Headless (invisible)**
+> Le navigateur tourne en arrière-plan. Tu ne vois rien à l'écran, mais Claude Code navigue quand même. C'est plus rapide et c'est le mode par défaut.
 >
 > `claude mcp add playwright -- npx @playwright/mcp@latest`
 >
-> Pas besoin de le faire maintenant si tu ne veux pas. Retiens juste le concept : Claude Code peut naviguer sur le web à ta place, exactement comme toi tu le ferais avec ta souris et ton clavier.
+> **Mode 2 — Headed (visible)**
+> Le navigateur s'ouvre devant toi et tu vois tout ce que Claude Code fait en temps réel : les clics, le texte qui s'écrit, les pages qui défilent. C'est impressionnant pour une démo et c'est parfait pour garder un œil sur ce qui se passe.
+>
+> `claude mcp add playwright -- npx @playwright/mcp@latest --headed`
+>
+> **Mon conseil :** commence avec le mode **headed** (visible). C'est plus rassurant de voir ce que fait Claude Code dans le navigateur, surtout au début. Tu pourras passer en headless plus tard quand tu seras à l'aise.
 
 Demande à l'utilisateur :
 
@@ -378,8 +388,8 @@ Demande à l'utilisateur :
 
 Si l'utilisateur veut essayer et que Playwright est installé, lance l'agent. Si Playwright n'est pas installé, explique :
 
-> Il semble que le MCP Playwright ne soit pas encore installé. Pas de souci, tu pourras l'ajouter plus tard avec cette commande :
-> `claude mcp add playwright -- npx @playwright/mcp@latest`
+> Il semble que le MCP Playwright ne soit pas encore installé. Pas de souci, tu pourras l'ajouter plus tard. Je te recommande le mode visible pour commencer :
+> `claude mcp add playwright -- npx @playwright/mcp@latest --headed`
 > Puis relance Claude Code et l'agent sera prêt.
 
 Passe à la phase finale.
@@ -427,7 +437,11 @@ pip3 install yfinance reportlab matplotlib --break-system-packages
 ```
 
 ### L'agent web-browser ne fonctionne pas
-Vérifier que le MCP Playwright est installé :
+Vérifier que le MCP Playwright est installé. Mode visible (recommandé pour débuter) :
+```bash
+claude mcp add playwright -- npx @playwright/mcp@latest --headed
+```
+Ou mode invisible (plus rapide) :
 ```bash
 claude mcp add playwright -- npx @playwright/mcp@latest
 ```

@@ -29,8 +29,12 @@ En suivant le tour guidé, tu vas comprendre **en pratique** :
   - `yfinance` — pour récupérer les données boursières
   - `reportlab` — pour générer le PDF
   - `matplotlib` — pour le graphique technique
-- **(Optionnel) MCP Playwright** — pour l'agent navigateur web. S'installe en une commande :
+- **(Optionnel) MCP Playwright** — pour l'agent navigateur web. Deux modes :
   ```bash
+  # Mode visible (tu vois le navigateur — recommandé pour débuter)
+  claude mcp add playwright -- npx @playwright/mcp@latest --headed
+
+  # Mode invisible (le navigateur tourne en arrière-plan)
   claude mcp add playwright -- npx @playwright/mcp@latest
   ```
   Pas obligatoire pour le tour de base. Tu peux l'ajouter après.
@@ -86,7 +90,8 @@ Tu peux aussi tester l'agent `web-browser` qui navigue sur internet à ta place 
 
 **Note :** l'agent web-browser nécessite le MCP Playwright. Installe-le avec :
 ```bash
-claude mcp add playwright -- npx @playwright/mcp@latest
+# Mode visible (recommandé pour les démos)
+claude mcp add playwright -- npx @playwright/mcp@latest --headed
 ```
 
 ## Tu veux aller plus loin ?
