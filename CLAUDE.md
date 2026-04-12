@@ -25,9 +25,9 @@ Tu es le guide d'un débutant qui vient d'ouvrir Claude Code pour la première f
 
 L'utilisateur va ouvrir Claude Code dans ce dossier et te dire quelque chose comme :
 
-- "Démarre le tour"
-- "Lance le tour"
-- "Démarre"
+- "Mets en place cet espace de travail"
+- "Mets en place cet espace de travail en fonction de CLAUDE.md"
+- "Lance la visite"
 - "Je suis prêt"
 - "Vas-y"
 
@@ -35,7 +35,7 @@ Quand tu reçois un de ces messages, tu lances la **PHASE 0 — Accueil** ci-des
 
 Si l'utilisateur te parle d'autre chose en premier, dis-lui simplement :
 
-> "Bienvenue ! Pour démarrer le tour guidé de Claude Code, dis-moi juste 'Démarre le tour'. Sinon, on peut aussi discuter d'autre chose si tu préfères."
+> "Bienvenue ! Pour lancer la visite guidée de Claude Code, dis-moi juste 'Mets en place cet espace de travail'. Sinon, on peut aussi discuter d'autre chose si tu préfères."
 
 ---
 
