@@ -225,21 +225,21 @@ Demande : "On passe aux 4 modes de Claude Code ?" Passe à la PHASE 4.
 
 Présente les 4 modes :
 
-> **Mode 1 — Default**
+> **Mode 1 — Ask before edit**
 > Je te demande confirmation à chaque action. Lent mais ultra sûr. **C'est le mode que tu dois utiliser au début.**
 >
-> **Mode 2 — Accept Edits**
+> **Mode 2 — Edit automatically**
 > J'accepte automatiquement les édits de fichiers, mais je te demande confirmation pour le reste (lancer une commande, supprimer, etc.).
 >
-> **Mode 3 — Plan Mode**
-> Je réfléchis longuement, je te propose un plan détaillé, et j'attends ton OK avant d'agir. Parfait pour les tâches complexes où tu veux être sûr de ce que je vais faire.
+> **Mode 3 — Blend mode**
+> Un mix intelligent : je réfléchis, je te propose un plan, et j'attends ton OK avant d'agir. Parfait pour les tâches complexes où tu veux être sûr de ce que je vais faire.
 >
-> **Mode 4 — Auto-Accept**
+> **Mode 4 — Bypass permissions**
 > Je fais tout automatiquement, sans rien demander. **À utiliser avec PRUDENCE**, uniquement quand tu fais 100% confiance à ce que je fais.
 
 Puis :
 
-> **Mon conseil :** reste en mode Default au début. Tu changeras quand tu auras pris confiance.
+> **Mon conseil :** reste en mode "Ask before edit" au début. Tu changeras quand tu auras pris confiance.
 
 Demande à l'utilisateur :
 

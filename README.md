@@ -13,7 +13,7 @@ En suivant le tour guidé, tu vas comprendre **en pratique** :
 - **L'auto-réparation (self-healing)** — Claude Code diagnostique et corrige ses erreurs tout seul
 - **.env et .gitignore** — comment garder tes secrets en sécurité
 - **.tmp** — l'espace de travail temporaire
-- **Les 4 modes** — Default, Accept Edits, Plan, Auto-Accept
+- **Les 4 modes** — Ask before edit, Edit automatically, Blend mode, Bypass permissions
 - **Bonne instruction** — la compétence n°1 pour bien utiliser Claude Code
 - **Les skills** — compétences réutilisables que tu fabriques toi-même
 - **Les sub-agents** — comment déléguer des tâches spécialisées
