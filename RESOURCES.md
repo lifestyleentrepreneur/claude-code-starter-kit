@@ -50,7 +50,7 @@ Copie-les, remplace les crochets, c'est tout.
 | Ressource | Lien | Quand l'utiliser |
 |-----------|------|-----------------|
 | **Whisper Flow** | https://wisprflow.ai/ | L'outil de dictée vocale que j'utilise pour écrire mes prompts en parlant. 10x plus rapide que taper. |
-| **Communauté Skool (gratuite)** | https://www.skool.com/honvoh-ia-pour-creer-un-business/about?ref=3bb70d2e27f1458e89f4a6c2e6c20302 | La communauté où je partage mes ressources, mes vidéos longues, et où on discute automatisation IA. |
+| **Communauté Skool (gratuite)** | https://skool.honvoh.com | La communauté où je partage mes ressources, mes vidéos longues, et où on discute automatisation IA. |
 
 ---
 
