@@ -66,6 +66,20 @@ Une fois Claude Code lancé, dis-lui simplement :
 
 Et c'est parti. Claude Code va lire le `CLAUDE.md` du kit et te guider clic par clic.
 
+## 📄 Templates prêts à copier
+
+Dans le dossier [`templates/`](./templates/) tu as trois fichiers réutilisables :
+
+- [`claude_md_template.md`](./templates/claude_md_template.md) — Template de CLAUDE.md pour démarrer un nouveau projet
+- [`bonne_instruction_template.md`](./templates/bonne_instruction_template.md) — Template pour écrire une instruction qui marche (les 6 règles + 2 exemples)
+- [`directive_sop_template.md`](./templates/directive_sop_template.md) — Template de SOP pour la phase *Directive* de la méthodologie DOE
+
+Copie-les dans tes projets, remplace les crochets, c'est tout.
+
+Tous les autres liens mentionnés dans la vidéo (VS Code, Whisper Flow, communauté, appel gratuit) sont dans [`RESOURCES.md`](./RESOURCES.md).
+
+---
+
 ## À tester après le tour
 
 Une fois que tu as fini le tour, tu peux t'amuser avec le skill `generate-finance-report` sur n'importe quelle action :
