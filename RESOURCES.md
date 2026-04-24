@@ -33,7 +33,7 @@ Si quelque chose manque, installe-le pour moi. Ensuite, guide-moi étape par
 
 ---
 
-## 📄 Templates à copier
+## 📄 Templates Claude Code (dans ce repo)
 
 Dans le dossier [`templates/`](./templates/) tu trouveras trois fichiers prêts à l'emploi :
 
@@ -42,6 +42,20 @@ Dans le dossier [`templates/`](./templates/) tu trouveras trois fichiers prêts 
 - **[`directive_sop_template.md`](./templates/directive_sop_template.md)** — Template de SOP (Standard Operating Procedure) pour la phase *Directive* de la méthodologie DOE
 
 Copie-les, remplace les crochets, c'est tout.
+
+---
+
+## 📊 Bonus — Parler de votre nouvelle activité
+
+Quand vous lancez une nouvelle activité (service, business, side project), la toute première étape c'est d'en parler à votre entourage. Voici deux outils pour le faire bien :
+
+- **🗂️ Google Sheet — Suivi des contacts (Chaud / Tiède / Froid)**
+  Un tableur avec les bonnes colonnes (relation, canal, catégorie, date, réponse, next step) + 3 exemples. Cliquez, faites "Faire une copie" → c'est à vous.
+  👉 https://docs.google.com/spreadsheets/d/1cBLTfLkFnCKgzzMxEb62GwEaD3TVZG05-c2yEwYAHzA/copy
+
+- **📝 Google Doc — Templates de messages**
+  Ce qu'on dit au téléphone ou par message selon le profil de la personne (parent, ami proche, ancien collègue, connaissance éloignée). Avec templates d'appel, de vocal, de SMS, variations selon le profil, et relances.
+  👉 https://docs.google.com/document/d/1R6thRO0jy6YkN7IZT55OyJxZJH_dvghGgaZgTralcFA/copy
 
 ---
 
